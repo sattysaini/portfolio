@@ -1,0 +1,11 @@
+.home-container {
+  min-height: calc(100vh - 80px - 4rem); /* Full height minus navbar and padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.api-message-box {
+  border-left: 4px solid #10b981; /* emerald-500 */
+}
