@@ -1,14 +1,27 @@
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
-// Create an axios instance configured to talk to the Spring Boot backend
-const apiClient = axios.create({
-  baseURL: 'http://localhost:8080/api', // Your Spring Boot API base URL
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main className="container mx-auto px-4 py-8">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
+  );
+}
 
-// Function to get the home message from the backend
-export const getHomeMessage = () => {
-  return apiClient.get('/home');
-};
+export default App;

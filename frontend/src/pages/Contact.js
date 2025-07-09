@@ -1,10 +1,11 @@
 import React from 'react';
+import './Contact.css';
 
 function Contact() {
   return (
-    <div className="p-6 bg-gray-800 rounded-lg shadow-lg">
-      <h1 className="text-4xl font-bold text-white">Contact Me</h1>
-      <p className="mt-4 text-lg text-gray-300">
+    <div className="contact-container">
+      <h1>Contact Me</h1>
+      <p>
         This is the Contact page. Add a contact form or your social links here.
       </p>
     </div>
