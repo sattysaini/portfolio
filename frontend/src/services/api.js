@@ -17,3 +17,8 @@ export const getHomeData = () => {
 export const getAboutData = () => {
   return apiClient.get('/about');
 };
+
+// Function to get professional journey data from the backend
+export const getJourneyData = () => {
+  return apiClient.get('/journey');
+};

@@ -25,9 +25,15 @@ function About() {
         <>
           <h1>{aboutData.name}</h1>
           <h2>{aboutData.title}</h2>
-          <p>{aboutData.description}</p>
+          <p className="description">{aboutData.description}</p>
+          
+          <div className="education-section">
+            <h3>Education</h3>
+            <p>{aboutData.education}</p>
+          </div>
+          
           <div className="skills-section">
-            <h3>Skills:</h3>
+            <h3>Technical Skills</h3>
             <div className="skills-container">
               {aboutData.skills.map((skill, index) => (
                 <span key={index} className="skill-tag">

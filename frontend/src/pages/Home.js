@@ -24,7 +24,11 @@ function Home() {
       ) : homeData ? (
         <>
           <h1>{homeData.message}</h1>
-          <p>{homeData.description}</p>
+          <p className="description">{homeData.description}</p>
+          <div className="contact-info">
+            <p>📧 {homeData.email}</p>
+            <p>📱 {homeData.phone}</p>
+          </div>
           <div className="api-message-box">
             <p>Status: {homeData.status}</p>
           </div>
