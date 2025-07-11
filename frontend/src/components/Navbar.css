@@ -1,6 +1,5 @@
 .navbar {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background: #0a0a0a;
   padding: 1rem 0;
   position: sticky;
   top: 0;
@@ -24,6 +23,11 @@
   font-weight: 700;
   color: #333;
   margin: 0;
+}
+
+.nav-logo a {
+  color: #bbbbbb;
+  text-decoration: none;
 }
 
 .nav-menu {
