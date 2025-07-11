@@ -11,7 +11,7 @@ function App() {
     <Router>
       <div className="App">
         <Navbar />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 fade-in">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

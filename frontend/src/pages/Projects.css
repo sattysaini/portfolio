@@ -1,20 +1,31 @@
 .projects-container {
-  padding: 1.5rem;
-  background-color: #1f2937;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .projects-container h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .projects-container p {
   margin-top: 1rem;
   font-size: 1.125rem;
-  color: #d1d5db;
+  color: #34495e;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .projects-grid {
@@ -25,27 +36,29 @@
 }
 
 .project-card {
-  background-color: #111827;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #374151;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .project-card h3 {
-  color: #ffffff;
+  color: #2c3e50;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  font-family: 'Georgia', serif;
 }
 
 .project-description {
-  color: #d1d5db;
+  color: #34495e;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -55,10 +68,11 @@
 }
 
 .technologies h4 {
-  color: #14b8a6;
+  color: #e74c3c;
   font-size: 1rem;
   margin-bottom: 0.75rem;
   font-weight: 600;
+  font-family: 'Georgia', serif;
 }
 
 .tech-tags {
@@ -68,32 +82,64 @@
 }
 
 .tech-tag {
-  background-color: #0d9488;
+  background: linear-gradient(45deg, #3498db, #2980b9);
   color: #ffffff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
   font-size: 0.875rem;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
 .achievements h4 {
-  color: #10b981;
+  color: #27ae60;
   font-size: 1rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  font-family: 'Georgia', serif;
 }
 
 .achievements p {
-  color: #d1d5db;
+  color: #2c3e50;
   margin: 0;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .error-message {
-  color: #ef4444;
-  font-weight: 700;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #e74c3c;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .loading-message {
-  color: #ffffff;
+  color: #3498db;
+  font-size: 1.3rem;
+  text-align: center;
+  background: rgba(52, 152, 219, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #3498db;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -1,20 +1,31 @@
 .contact-container {
-  padding: 1.5rem;
-  background-color: #1f2937;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .contact-container h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
 }
 
 .contact-container p {
   margin-top: 1rem;
   font-size: 1.125rem;
-  color: #d1d5db;
+  color: #34495e;
+  text-align: center;
+  line-height: 1.6;
 }
 
 .contact-info {
@@ -25,52 +36,69 @@
 }
 
 .contact-item {
-  background-color: #111827;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #374151;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   text-align: center;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .contact-item:hover {
-  transform: translateY(-2px);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .contact-item h3 {
-  color: #14b8a6;
+  color: #e74c3c;
   font-size: 1.25rem;
   margin-bottom: 1rem;
   font-weight: 600;
+  font-family: 'Georgia', serif;
 }
 
 .contact-item p {
   margin: 0;
   font-size: 1rem;
+  color: #2c3e50;
 }
 
 .contact-item a {
-  color: #10b981;
+  color: #3498db;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .contact-item a:hover {
-  color: #14b8a6;
+  color: #2980b9;
   text-decoration: underline;
 }
 
 .contact-message {
-  background-color: #111827;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
-  border-radius: 0.75rem;
-  border-left: 4px solid #10b981;
+  border-radius: 15px;
+  border-left: 4px solid #27ae60;
   margin-top: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-message:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .contact-message p {
   margin: 0;
   line-height: 1.6;
-  color: #d1d5db;
+  color: #2c3e50;
   font-style: italic;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

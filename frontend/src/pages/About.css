@@ -1,28 +1,39 @@
 .about-container {
-  padding: 1.5rem;
-  background-color: #1f2937;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .about-container h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 1rem 0;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .about-container h2 {
   font-size: 1.5rem;
-  color: #14b8a6;
+  color: #e74c3c;
   margin-top: 0.5rem;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+  text-align: center;
 }
 
 .about-container p {
   margin-top: 1rem;
   font-size: 1.125rem;
-  color: #d1d5db;
+  color: #34495e;
+  line-height: 1.6;
 }
 
 .description {
@@ -32,21 +43,30 @@
 .education-section {
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: #111827;
-  border-radius: 0.5rem;
-  border-left: 4px solid #10b981;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  border-left: 4px solid #27ae60;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.education-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .education-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #2c3e50;
   margin-bottom: 0.75rem;
+  font-family: 'Georgia', serif;
 }
 
 .education-section p {
   margin: 0;
-  color: #14b8a6;
+  color: #27ae60;
+  font-weight: 500;
 }
 
 .skills-section {
@@ -56,8 +76,9 @@
 .skills-section h3 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ffffff;
+  color: #2c3e50;
   margin-bottom: 0.75rem;
+  font-family: 'Georgia', serif;
 }
 
 .skills-container {
@@ -67,18 +88,49 @@
 }
 
 .skill-tag {
-  background-color: #0d9488;
+  background: linear-gradient(45deg, #3498db, #2980b9);
   color: #ffffff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
   font-size: 0.875rem;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
 .error-message {
-  color: #ef4444;
-  font-weight: 700;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #e74c3c;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .loading-message {
-  color: #ffffff;
+  color: #3498db;
+  font-size: 1.3rem;
+  text-align: center;
+  background: rgba(52, 152, 219, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #3498db;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

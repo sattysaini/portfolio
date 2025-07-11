@@ -1,16 +1,23 @@
 .journey-container {
-  padding: 1.5rem;
-  background-color: #1f2937;
-  border-radius: 0.5rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 1000px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
 }
 
 .journey-container h1 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
   text-align: center;
   margin-bottom: 3rem;
+  font-family: 'Georgia', serif;
+  letter-spacing: 1px;
 }
 
 .timeline {
@@ -25,8 +32,10 @@
   left: 30px;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(to bottom, #10b981, #14b8a6);
+  width: 3px;
+  background: linear-gradient(to bottom, #3498db, #2980b9, #27ae60);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
 }
 
 .timeline-item {
@@ -47,19 +56,28 @@
 }
 
 .timeline-item.role .timeline-marker {
-  background-color: #10b981;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  box-shadow: 0 0 15px rgba(231, 76, 60, 0.4);
 }
 
 .timeline-item.project .timeline-marker {
-  background-color: #14b8a6;
+  background: linear-gradient(45deg, #3498db, #2980b9);
+  box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
 }
 
 .timeline-content {
-  background-color: #111827;
+  background: rgba(255, 255, 255, 0.8);
   padding: 2rem;
-  border-radius: 0.75rem;
-  border: 1px solid #374151;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   position: relative;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .timeline-content::before {
@@ -71,7 +89,7 @@
   height: 0;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-right: 10px solid #111827;
+  border-right: 10px solid rgba(255, 255, 255, 0.8);
 }
 
 .timeline-header {
@@ -79,14 +97,15 @@
 }
 
 .timeline-header h3 {
-  color: #ffffff;
+  color: #2c3e50;
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   font-weight: 600;
+  font-family: 'Georgia', serif;
 }
 
 .company {
-  color: #14b8a6;
+  color: #e74c3c;
   font-weight: 600;
   font-size: 1.1rem;
   display: block;
@@ -94,13 +113,13 @@
 }
 
 .period {
-  color: #9ca3af;
+  color: #7f8c8d;
   font-size: 0.9rem;
   font-style: italic;
 }
 
 .description {
-  color: #d1d5db;
+  color: #34495e;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -113,11 +132,18 @@
 }
 
 .tech-tag {
-  background-color: #0d9488;
+  background: linear-gradient(45deg, #3498db, #2980b9);
   color: #ffffff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
   font-size: 0.875rem;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
 }
 
 .achievements {
@@ -127,22 +153,45 @@
 }
 
 .achievement {
-  color: #10b981;
+  color: #27ae60;
   font-size: 0.95rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-weight: 500;
 }
 
 .error-message {
-  color: #ef4444;
-  font-weight: 700;
+  color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
+  border: 2px solid #e74c3c;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 .loading-message {
-  color: #ffffff;
+  color: #3498db;
+  font-size: 1.3rem;
   text-align: center;
+  background: rgba(52, 152, 219, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #3498db;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {

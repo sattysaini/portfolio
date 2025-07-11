@@ -1,7 +1,13 @@
 .experience-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.8s ease-out;
 }
 
 .experience-timeline {
@@ -11,39 +17,68 @@
 }
 
 .experience-card {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 25px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .experience-header h2 {
   color: #2c3e50;
   margin-bottom: 5px;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
 }
 
 .experience-header h3 {
-  color: #3498db;
+  color: #e74c3c;
   margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .duration {
   color: #7f8c8d;
   font-style: italic;
   margin-bottom: 15px;
+  font-weight: 500;
 }
 
 .experience-projects h4 {
   color: #2c3e50;
   margin-bottom: 10px;
+  font-family: 'Georgia', serif;
+  font-weight: 600;
 }
 
 .experience-projects ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 .experience-projects li {
   margin-bottom: 8px;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #34495e;
+  position: relative;
+  padding-left: 20px;
+}
+
+.experience-projects li::before {
+  content: '▸';
+  color: #3498db;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
