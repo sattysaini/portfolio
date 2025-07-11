@@ -10,12 +10,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        {/*<Navbar />*/}
         <main className="container mx-auto px-4 py-8 fade-in">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/journey" element={<ProfessionalJourney />} />
+            <Route path="/experience" element={<ProfessionalJourney />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

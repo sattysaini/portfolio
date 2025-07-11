@@ -1,82 +1,149 @@
 import React, { useState, useEffect } from 'react';
 import { getHomeData } from '../services/api';
+import Icon from '../components/Icon';
 import './Home.css';
 
-function Home() {
+const Home = () => {
     const [homeData, setHomeData] = useState(null);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
-        getHomeData()
-            .then(response => {
-                setHomeData(response.data);
-                // Trigger animation after data loads
-                setTimeout(() => setIsAnimating(true), 500);
-            })
-            .catch(err => {
-                console.error("Error fetching data: ", err);
-                setError('Failed to connect to the backend. Is the Spring Boot server running?');
-            });
+        fetchHomeData();
     }, []);
 
-    const AnimatedText = ({ text }) => {
-        const [displayText, setDisplayText] = useState('');
-        const [currentIndex, setCurrentIndex] = useState(0);
-        const [showCursor, setShowCursor] = useState(true);
+    const fetchHomeData = async () => {
+        try {
+            setLoading(true);
+            const response = await getHomeData();
+            setHomeData(response.data);
+            setError(null);
+        } catch (err) {
+            console.error('Error fet');
+            setError('Failed to load portfolio data. Please try again.');
+        } finally {
+            setLoading(false);
+        }
+    };
 
-        useEffect(() => {
-            if (isAnimating && currentIndex < text.length) {
-                const timer = setTimeout(() => {
-                    setDisplayText(prev => prev + text[currentIndex]);
-                    setCurrentIndex(prev => prev + 1);
-                }, 80 + Math.random() * 120); // Varies speed for realistic typing feel
+    const renderSocialLinks = () => {
+        if (!homeData?.socialLinks) return null;
 
-                return () => clearTimeout(timer);
-            } else if (currentIndex >= text.length) {
-                // Hide cursor after typing is complete
-                setTimeout(() => setShowCursor(false), 1000);
-            }
-        }, [isAnimating, currentIndex, text]);
+        return homeData.socialLinks.map((link, index) => (
+            <a
+                key={index}
+                href={link.url}
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <Icon name={link.icon} size={20} />
+                {link.name}
+            </a>
+        ));
+    };
 
-        // Reset when text changes
-        useEffect(() => {
-            setDisplayText('');
-            setCurrentIndex(0);
-            setShowCursor(true);
-        }, [text]);
+    const renderTechStack = () => {
+        if (!homeData?.techStack) return null;
 
+        return homeData.techStack.map((tech, index) => (
+            <div key={index} className="tech-item">
+                <Icon name={tech.icon} size={32} />
+                <span>{tech.name}</span>
+            </div>
+        ));
+    };
+
+    if (loading) {
         return (
-            <div className="writing-container">
-                <h1 className="writing-text-char">
-                    {displayText}
-                    {showCursor && <span className="typing-cursor">|</span>}
-                </h1>
+            <div className="loading">
+                <div className="spinner"></div>
             </div>
         );
-    };
+    }
+
+    if (error) {
+        return (
+            <div className="error-message">
+                <h2>Unable to load portfolio data</h2>
+                <p>{error}</p>
+                <button onClick={fetchHomeData}>Retry</button>
+            </div>
+        );
+    }
+
+    if (!homeData) {
+        return (
+            <div className="error-message">
+                <h2>No data available</h2>
+                <p>Portfolio data could not be loaded.</p>
+                <button onClick={fetchHomeData}>Retry</button>
+            </div>
+        );
+    }
 
     return (
         <div className="home-container">
-            {error ? (
-                <p className="error-message">{error}</p>
-            ) : homeData ? (
-                <>
-                    <AnimatedText text={homeData.message} />
-                    <p className="description">{homeData.description}</p>
-                    <div className="contact-info">
-                        <p>📧 {homeData.email}</p>
-                        <p>📱 {homeData.phone}</p>
+            {/* Navigation */}
+            <nav className="navbar">
+                <div className="nav-container">
+                    <h1 className="nav-logo">{homeData.fullName || 'PORTFOLIO'}</h1>
+                    <ul className="nav-menu">
+                        <li><a href="experience">Work Experience</a></li>
+                        <li><a href="projects">Projects</a></li>
+                        <li><a href="contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            {/* Main Content */}
+            <main className="main-content">
+                {/* Hero Section */}
+                <section className="hero">
+                    <div className="profile-section">
+                        <div className="profile-image">
+                            <img
+                                src={homeData.profileImage || '/images/profile.jpg'}
+                                alt={homeData.fullName || 'Profile'}
+                            />
+                        </div>
+                        <div className="profile-info">
+                            <h1 className="hero-title">
+                <span className="greeting-text">
+                  {homeData.greeting || "Hey, I'm John."}
+                </span>{' '}
+                                <span className="highlight">
+                  {homeData.role || "I'm a Frontend Developer."}
+                </span>
+                                {homeData.workStatus && (
+                                    <span className="status">
+                    <span
+                        className={`status-dot ${homeData.workStatus.available ? 'available' : 'unavailable'}`}
+                    ></span>
+                                        {homeData.workStatus.text || 'Open to work'}
+                  </span>
+                                )}
+                            </h1>
+                            <div className="location">
+                                📍 {homeData.location || 'Location not specified'}
+                            </div>
+                            <div className="social-links">
+                                {renderSocialLinks()}
+                            </div>
+                        </div>
                     </div>
-                    <div className="api-message-box">
-                        <p>Status: {homeData.status}</p>
+                </section>
+
+                {/* Tech Stack Section */}
+                <section className="tech-stack">
+                    <h2 className="section-title">TECH STACK</h2>
+                    <div className="tech-grid">
+                        {renderTechStack()}
                     </div>
-                </>
-            ) : (
-                <p className="loading-message">Loading...</p>
-            )}
+                </section>
+            </main>
         </div>
     );
-}
+};
 
 export default Home;

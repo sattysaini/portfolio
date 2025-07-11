@@ -3,14 +3,27 @@
 
 body {
   margin: 0;
-  font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  padding: 0;
+  width: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  color: #2c3e50;
+  background-color: #0a0a0a;
+  color: #ffffff;
   min-height: 100vh;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -19,7 +32,10 @@ code {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 /* Global glass morphism utility */

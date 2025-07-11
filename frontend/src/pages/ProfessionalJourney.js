@@ -1,56 +1,113 @@
 import React, { useState, useEffect } from 'react';
 import { getJourneyData } from '../services/api';
+import Icon from '../components/Icon';
 import './ProfessionalJourney.css';
 
 function ProfessionalJourney() {
   const [journeyData, setJourneyData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    getJourneyData()
-      .then(response => {
-        setJourneyData(response.data);
-      })
-      .catch(err => {
-        console.error("Error fetching journey data: ", err);
-        setError('Failed to load professional journey');
-      });
+    fetchJourneyData();
   }, []);
+
+  const fetchJourneyData = async () => {
+    try {
+      setLoading(true);
+      const response = await getJourneyData();
+      setJourneyData(response.data);
+      setError(null);
+    } catch (err) {
+      console.error('Error fetching journey data:', err);
+      setError('Failed to load professional journey');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="loading">
+        <div className="spinner"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error-message">
+        <h2>Unable to load journey data</h2>
+        <p>{error}</p>
+        <button onClick={fetchJourneyData}>Retry</button>
+      </div>
+    );
+  }
 
   return (
     <div className="journey-container">
-      <h1>Professional Journey</h1>
-      {error ? (
-        <p className="error-message">{error}</p>
-      ) : journeyData ? (
-        <div className="timeline">
-          {journeyData.timeline.map((item, index) => (
-            <div key={index} className={`timeline-item ${item.type}`}>
-              <div className="timeline-marker"></div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <h3>{item.title}</h3>
-                  <span className="company">{item.company}</span>
-                  <span className="period">{item.period}</span>
-                </div>
-                <p className="description">{item.description}</p>
-                <div className="technologies">
-                  {item.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="tech-tag">{tech}</span>
-                  ))}
-                </div>
-                <div className="achievements">
-                  {item.achievements.map((achievement, achIndex) => (
-                    <div key={achIndex} className="achievement">✓ {achievement}</div>
-                  ))}
+      <nav className="navbar">
+        <div className="nav-container">
+          <h1 className="nav-logo">PORTFOLIO</h1>
+          <ul className="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="experience">Experience</a></li>
+            <li><a href="projects">Projects</a></li>
+            <li><a href="contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <main className="main-content">
+        <section className="journey-hero">
+          <h1 className="page-title">PROFESSIONAL JOURNEY</h1>
+          <p className="page-description">Complete timeline of my career progression and achievements</p>
+        </section>
+
+        <section className="timeline-section">
+          <div className="timeline">
+            {journeyData?.timeline?.map((item, index) => (
+              <div key={index} className={`timeline-item ${item.type}`}>
+                <div className="timeline-marker"></div>
+                <div className="timeline-content">
+                  <div className="timeline-header">
+                    <h3>{item.title}</h3>
+                    <h4>{item.company}</h4>
+                    <span className="period">{item.period}</span>
+                  </div>
+                  <p className="timeline-description">{item.description}</p>
+                  
+                  {item.technologies && (
+                    <div className="technologies">
+                      <h5>Technologies:</h5>
+                      <div className="tech-tags">
+                        {item.technologies.map((tech, techIndex) => (
+                          <div key={techIndex} className="tech-tag">
+                            <Icon name={tech.toLowerCase().replace(/[^a-z0-9]/g, '')} size={16} />
+                            <span>{tech}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {item.achievements && (
+                    <div className="achievements">
+                      <h5>Key Achievements:</h5>
+                      <ul>
+                        {item.achievements.map((achievement, achIndex) => (
+                          <li key={achIndex}>{achievement}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <p className="loading-message">Loading professional journey...</p>
-      )}
+            ))}
+          </div>
+        </section>
+      </main>
     </div>
   );
 }

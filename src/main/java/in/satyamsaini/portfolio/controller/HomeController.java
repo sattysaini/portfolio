@@ -3,6 +3,9 @@ package in.satyamsaini.portfolio.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -13,12 +16,84 @@ public class HomeController {
     @GetMapping("/api/home")
     public Map<String, Object> home() {
         Map<String, Object> response = new HashMap<>();
-        response.put("message", "Welcome to Satyam's Portfolio!");
-        response.put("description", "Senior Software Engineer with 6+ years of experience in mobile and web development, specializing in iOS, game development, and scalable backend systems.");
-        response.put("status", "success");
-        response.put("email", "stym.6996@gmail.com");
-        response.put("phone", "+91-9810910924");
+        // Basic information
+        response.put("fullName", "SATYAM SAINI");
+        response.put("greeting", "Hello, I'm Satyam.");
+        response.put("role", "I'm a Developer.");
+        response.put("profileImage", "/images/profile.jpg");
+        response.put("location", "Bangalore, India");
+
+        // Work status object
+        Map<String, Object> workStatus = new HashMap<>();
+        workStatus.put("available", true);
+        workStatus.put("text", "Open for new opportunities");
+        response.put("workStatus", workStatus);
+
+        // Social links array
+        List<Map<String, String>> socialLinks = new ArrayList<>();
+
+        Map<String, String> linkedin = new HashMap<>();
+        linkedin.put("name", "LinkedIn");
+        linkedin.put("url", "https://www.linkedin.com/in/satyam--saini/");
+        linkedin.put("icon", "linkedin.svg");
+        socialLinks.add(linkedin);
+
+        Map<String, String> github = new HashMap<>();
+        github.put("name", "GitHub");
+        github.put("url", "https://github.com/sattysaini");
+        github.put("icon", "github.svg");
+        socialLinks.add(github);
+
+        response.put("socialLinks", socialLinks);
+
+        // Tech stack array
+        List<Map<String, String>> techStack = new ArrayList<>();
+
+        // Languages
+        addTechItem(techStack, "C#", "csharp.svg");
+        addTechItem(techStack, "Java", "java.svg");
+        addTechItem(techStack, "SwiftUI", "swiftui.svg");
+        addTechItem(techStack, "C++", "cplusplus.svg");
+        addTechItem(techStack, "Python", "python.svg");
+        addTechItem(techStack, "Ruby on Rails", "rails.svg");
+        addTechItem(techStack, "HTML", "html.svg");
+        addTechItem(techStack, "SQL", "sql.svg");
+        
+        // Backend & APIs
+        addTechItem(techStack, "Node.js", "node.js.svg");
+        addTechItem(techStack, "Spring Boot", "spring boot.svg");
+        addTechItem(techStack, "REST APIs", "rest apis.svg");
+        addTechItem(techStack, "Microservices", "microservices.svg");
+        addTechItem(techStack, "AWS Lambda", "aws lambda.svg");
+        
+        // Cloud
+        addTechItem(techStack, "AWS", "aws.svg");
+        addTechItem(techStack, "Terraform", "terraform.svg");
+        
+        // Databases
+        addTechItem(techStack, "PostgreSQL", "postgresql.svg");
+        addTechItem(techStack, "Redis", "redis.svg");
+        addTechItem(techStack, "MySQL", "mysql.svg");
+        addTechItem(techStack, "iCloud DB", "icloud db.svg");
+        
+        // Tools
+        addTechItem(techStack, "Unity", "unity.svg");
+        addTechItem(techStack, "Docker", "docker.svg");
+        addTechItem(techStack, "Git", "git.svg");
+        
+        // Platforms
+        addTechItem(techStack, "iOS", "ios.svg");
+        addTechItem(techStack, "Android", "android.svg");
+
+        response.put("techStack", techStack);
         return response;
+    }
+    
+    private void addTechItem(List<Map<String, String>> techStack, String name, String icon) {
+        Map<String, String> item = new HashMap<>();
+        item.put("name", name);
+        item.put("icon", icon);
+        techStack.add(item);
     }
 
     @GetMapping("/api/about")
