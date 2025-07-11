@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getJourneyData } from '../services/api';
-import Icon from '../components/Icon';
-import Navbar from '../components/Navbar';
+import { getExperienceData } from '../services/api';
+import TimelineItem from '../components/TimelineItem';
 import './Experience.css';
 
 function Experience() {
@@ -16,7 +15,7 @@ function Experience() {
   const fetchJourneyData = async () => {
     try {
       setLoading(true);
-      const response = await getJourneyData();
+      const response = await getExperienceData();
       setJourneyData(response.data);
       setError(null);
     } catch (err) {
@@ -57,42 +56,7 @@ function Experience() {
         <section className="timeline-section">
           <div className="timeline">
             {journeyData?.timeline?.map((item, index) => (
-              <div key={index} className={`timeline-item ${item.type}`}>
-                <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <div className="timeline-header">
-                    <h3>{item.title}</h3>
-                    <h4>{item.company}</h4>
-                    <span className="period">{item.period}</span>
-                  </div>
-                  <p className="timeline-description">{item.description}</p>
-                  
-                  {item.technologies && (
-                    <div className="technologies">
-                      <h5>Technologies:</h5>
-                      <div className="tech-tags">
-                        {item.technologies.map((tech, techIndex) => (
-                          <div key={techIndex} className="tech-tag">
-                            <Icon name={tech.toLowerCase().replace(/[^a-z0-9]/g, '')} size={16} />
-                            <span>{tech}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  
-                  {item.achievements && (
-                    <div className="achievements">
-                      <h5>Key Achievements:</h5>
-                      <ul>
-                        {item.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex}>{achievement}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              </div>
+              <TimelineItem key={index} item={item} index={index} />
             ))}
           </div>
         </section>

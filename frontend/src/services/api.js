@@ -19,6 +19,6 @@ export const getAboutData = () => {
 };
 
 // Function to get professional journey data from the backend
-export const getJourneyData = () => {
-  return apiClient.get('/journey');
+export const getExperienceData = () => {
+  return apiClient.get('/experience');
 };

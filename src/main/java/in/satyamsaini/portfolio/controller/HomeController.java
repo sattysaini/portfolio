@@ -96,75 +96,90 @@ public class HomeController {
         techStack.add(item);
     }
 
-    @GetMapping("/api/about")
-    public Map<String, Object> about() {
-        Map<String, Object> response = new HashMap<>();
-        response.put("name", "Satyam Saini");
-        response.put("title", "Senior Software Engineer II");
-        response.put("description", "Experienced software engineer with expertise in mobile development, game development, and cloud infrastructure. Currently at Zynga, previously at Samsung.");
-        response.put("education", "Bachelor of Engineering - Computer Science (2014-2018), NSIT New Delhi");
-        response.put("skills", new String[]{
-            "C#", "SwiftUI", "C++", "Python", "Ruby on Rails", "Objective-C", "HTML", "SQL",
-            "REST APIs", "Microservices", "AWS Lambda", "AWS EC2", "AWS S3", "Terraform",
-            "PostgreSQL", "Redis", "MySQL", "Unity", "Docker", "CI/CD", "iOS", "Android"
-        });
-        return response;
-    }
-
-    @GetMapping("/api/journey")
+    @GetMapping("/api/experience")
     public Map<String, Object> journey() {
         Map<String, Object> response = new HashMap<>();
-        Map<String, Object>[] timeline = new Map[6];
-        
+        Map<String, Object>[] timeline = new Map[10];
+
+        Map<String, Object> zyngaSse2 = new HashMap<>();
+        zyngaSse2.put("type", "role");
+        zyngaSse2.put("title", "Senior Software Engineer II");
+        zyngaSse2.put("company", "Zynga");
+        zyngaSse2.put("period", "May 2025 - Present");
+        zyngaSse2.put("description", "");
+        zyngaSse2.put("technologies", new String[]{});
+        zyngaSse2.put("achievements", new String[]{});
+        timeline[0] = zyngaSse2;
+
         Map<String, Object> blockPuzzle = new HashMap<>();
         blockPuzzle.put("type", "project");
         blockPuzzle.put("title", "1010! Block Puzzle Game");
         blockPuzzle.put("company", "Zynga");
-        blockPuzzle.put("period", "2022 - Present");
+        blockPuzzle.put("period", "Aug 2024 - Present");
         blockPuzzle.put("description", "Led cross-functional team to ship major features, developed DDA engine");
         blockPuzzle.put("technologies", new String[]{"C#", "Unity", "AWS", "Analytics"});
         blockPuzzle.put("achievements", new String[]{"30% ARPDAU increase", "25% stability improvement", "18% crash reduction"});
-        timeline[0] = blockPuzzle;
-        
-        Map<String, Object> zynga = new HashMap<>();
-        zynga.put("type", "role");
-        zynga.put("title", "Senior Software Engineer II");
-        zynga.put("company", "Zynga");
-        zynga.put("period", "Sept 2021 - Present");
-        zynga.put("description", "Leading mobile game development, architecting scalable solutions");
-        zynga.put("technologies", new String[]{"C#", "SwiftUI", "Unity", "Ruby on Rails"});
-        zynga.put("achievements", new String[]{"Led team of 4 developers", "Shipped 7+ major features", "99.6% crash-free sessions"});
-        timeline[1] = zynga;
+        timeline[1] = blockPuzzle;
         
         Map<String, Object> boggle = new HashMap<>();
         boggle.put("type", "project");
         boggle.put("title", "Boggle: Arcade Edition");
         boggle.put("company", "Zynga");
-        boggle.put("period", "2021 - 2022");
+        boggle.put("period", "July 2023 - Aug 2024");
         boggle.put("description", "First Apple Arcade game built entirely on Apple infrastructure");
         boggle.put("technologies", new String[]{"SwiftUI", "Apple GameKit", "iCloud DB", "Python"});
         boggle.put("achievements", new String[]{"90% cost reduction", "32-user SharePlay support", "Apple recognition"});
         timeline[2] = boggle;
+
+        Map<String, Object> zyngaSse = new HashMap<>();
+        zyngaSse.put("type", "role");
+        zyngaSse.put("title", "Senior Software Engineer");
+        zyngaSse.put("company", "Zynga");
+        zyngaSse.put("period", "Sept 2022 - May 2025");
+        zyngaSse.put("description", "");
+        zyngaSse.put("technologies", new String[]{});
+        zyngaSse.put("achievements", new String[]{});
+        timeline[3] = zyngaSse;
         
         Map<String, Object> crosswords = new HashMap<>();
         crosswords.put("type", "project");
         crosswords.put("title", "Crosswords with Friends");
         crosswords.put("company", "Zynga");
-        crosswords.put("period", "2021 - 2022");
+        crosswords.put("period", "Sept 2021 - July 2023");
         crosswords.put("description", "Refactored 10+ year legacy codebase, migrated backend");
         crosswords.put("technologies", new String[]{"Ruby on Rails", "iOS", "REST APIs"});
         crosswords.put("achievements", new String[]{"40% faster delivery", "100% LTV increase", "75% loading time reduction"});
-        timeline[3] = crosswords;
-        
+        timeline[4] = crosswords;
+
+        Map<String, Object> zyngaSe2 = new HashMap<>();
+        zyngaSe2.put("type", "role");
+        zyngaSe2.put("title", "Software Engineer II");
+        zyngaSe2.put("company", "Zynga");
+        zyngaSe2.put("period", "Sept 2021 - Sept 2022");
+        zyngaSe2.put("description", "");
+        zyngaSe2.put("technologies", new String[]{});
+        zyngaSe2.put("achievements", new String[]{});
+        timeline[5] = zyngaSe2;
+
         Map<String, Object> samsung = new HashMap<>();
-        samsung.put("type", "role");
-        samsung.put("title", "Software Engineer");
+        samsung.put("type", "project");
+        samsung.put("title", "Tizen OS");
         samsung.put("company", "Samsung");
         samsung.put("period", "Jul 2018 - Aug 2021");
         samsung.put("description", "Developed Tizen OS platform and performance tools");
         samsung.put("technologies", new String[]{"C++", "Python", "MySQL", "REST APIs"});
         samsung.put("achievements", new String[]{"5% session time increase", "40% faster issue turnaround", "Automated 100+ hours of testing"});
-        timeline[4] = samsung;
+        timeline[6] = samsung;
+        
+        Map<String, Object> samsungSe = new HashMap<>();
+        samsungSe.put("type", "role");
+        samsungSe.put("title", "Software Engineer");
+        samsungSe.put("company", "Samsung");
+        samsungSe.put("period", "Jul 2018 - Aug 2021");
+        samsungSe.put("description", "");
+        samsungSe.put("technologies", new String[]{});
+        samsungSe.put("achievements", new String[]{});
+        timeline[7] = samsungSe;
         
         Map<String, Object> iris = new HashMap<>();
         iris.put("type", "project");
@@ -174,7 +189,17 @@ public class HomeController {
         iris.put("description", "Full-stack biometric authentication system");
         iris.put("technologies", new String[]{"Python", "Machine Learning", "Computer Vision"});
         iris.put("achievements", new String[]{"Improved accuracy", "Working prototype", "IIT Delhi dataset"});
-        timeline[5] = iris;
+        timeline[8] = iris;
+
+        Map<String, Object> collegeStudent = new HashMap<>();
+        collegeStudent.put("type", "role");
+        collegeStudent.put("title", "Student");
+        collegeStudent.put("company", "NSIT");
+        collegeStudent.put("period", "Aug 2014 - May 2018");
+        collegeStudent.put("description", "");
+        collegeStudent.put("technologies", new String[]{});
+        collegeStudent.put("achievements", new String[]{});
+        timeline[9] = collegeStudent;
         
         response.put("timeline", timeline);
         return response;

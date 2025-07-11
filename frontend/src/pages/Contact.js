@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Icon from '../components/Icon';
-import Navbar from '../components/Navbar';
 import './Contact.css';
 
 function Contact() {

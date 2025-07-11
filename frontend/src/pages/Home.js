@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getHomeData } from '../services/api';
 import Icon from '../components/Icon';
-import Navbar from '../components/Navbar';
 import './Home.css';
 
 const Home = () => {

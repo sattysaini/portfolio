@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { getJourneyData } from '../services/api';
+import { getExperienceData } from '../services/api';
 import Icon from '../components/Icon';
-import Navbar from "../components/Navbar";
 import './Projects.css';
 
 function Projects() {
@@ -16,7 +15,7 @@ function Projects() {
   const fetchJourneyData = async () => {
     try {
       setLoading(true);
-      const response = await getJourneyData();
+      const response = await getExperienceData();
       setJourneyData(response.data);
       setError(null);
     } catch (err) {
