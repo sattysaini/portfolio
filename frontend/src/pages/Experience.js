@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { getJourneyData } from '../services/api';
 import Icon from '../components/Icon';
 import Navbar from '../components/Navbar';
-import './ProfessionalJourney.css';
+import './Experience.css';
 
-function ProfessionalJourney() {
+function Experience() {
   const [journeyData, setJourneyData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -101,4 +101,4 @@ function ProfessionalJourney() {
   );
 }
 
-export default ProfessionalJourney;
+export default Experience;
