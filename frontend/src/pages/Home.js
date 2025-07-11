@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getHomeData } from '../services/api';
 import Icon from '../components/Icon';
+import Navbar from '../components/Navbar';
 import './Home.css';
 
 const Home = () => {
@@ -84,17 +85,6 @@ const Home = () => {
 
     return (
         <div className="home-container">
-            {/* Navigation */}
-            <nav className="navbar">
-                <div className="nav-container">
-                    <h1 className="nav-logo">{homeData.fullName || 'PORTFOLIO'}</h1>
-                    <ul className="nav-menu">
-                        <li><a href="experience">Work Experience</a></li>
-                        <li><a href="projects">Projects</a></li>
-                        <li><a href="contact">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
 
             {/* Main Content */}
             <main className="main-content">
@@ -104,7 +94,7 @@ const Home = () => {
                         <div className="profile-image">
                             <img
                                 src={homeData.profileImage || '/images/profile.jpg'}
-                                alt={homeData.fullName || 'Profile'}
+                                alt={`${homeData.fullName || 'Profile'} photo`}
                             />
                         </div>
                         <div className="profile-info">

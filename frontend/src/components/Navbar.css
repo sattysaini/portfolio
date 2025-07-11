@@ -1,79 +1,49 @@
 .navbar {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(15px);
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
-  z-index: 999;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 100;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
-.navbar-container {
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
-  height: 80px;
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
-}
-
-.navbar-logo {
-  color: #2c3e50;
-  justify-self: start;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
   align-items: center;
-  font-weight: 700;
-  font-family: 'Georgia', serif;
-  transition: color 0.3s ease;
 }
 
-.navbar-logo:hover {
-  color: #e74c3c;
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
 }
 
 .nav-menu {
   display: flex;
-  align-items: center;
   list-style: none;
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
 }
 
-.nav-item {
-  height: 80px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-links {
-  color: #34495e;
-  display: flex;
-  align-items: center;
+.nav-menu a {
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  height: 100%;
-  transition: all 0.3s ease;
+  color: #666;
   font-weight: 500;
-  border-radius: 8px;
-  margin: 0 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateZ(0);
+  position: relative;
 }
 
-.nav-links:hover {
-  color: #2c3e50;
-  background: rgba(255, 255, 255, 0.7);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links.active {
-  color: #e74c3c;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+.nav-menu a:hover {
+  color: #333;
+  transform: translateY(-1px);
 }

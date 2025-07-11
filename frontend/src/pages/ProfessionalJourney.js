@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getJourneyData } from '../services/api';
 import Icon from '../components/Icon';
+import Navbar from '../components/Navbar';
 import './ProfessionalJourney.css';
 
 function ProfessionalJourney() {
@@ -46,18 +47,6 @@ function ProfessionalJourney() {
 
   return (
     <div className="journey-container">
-      <nav className="navbar">
-        <div className="nav-container">
-          <h1 className="nav-logo">PORTFOLIO</h1>
-          <ul className="nav-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="experience">Experience</a></li>
-            <li><a href="projects">Projects</a></li>
-            <li><a href="contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
 
       <main className="main-content">
         <section className="journey-hero">

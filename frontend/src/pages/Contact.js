@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Icon from '../components/Icon';
+import Navbar from '../components/Navbar';
 import './Contact.css';
 
 function Contact() {
@@ -24,17 +25,6 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      <nav className="navbar">
-        <div className="nav-container">
-          <h1 className="nav-logo">PORTFOLIO</h1>
-          <ul className="nav-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="about">About</a></li>
-            <li><a href="experience">Experience</a></li>
-            <li><a href="projects">Projects</a></li>
-          </ul>
-        </div>
-      </nav>
 
       <main className="main-content">
         <section className="contact-hero">
