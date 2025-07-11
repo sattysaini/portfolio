@@ -88,8 +88,7 @@
 }
 
 .status {
-  display: inline-flex;
-  align-items: center;
+  display: inline;
   font-size: 1rem;
   color: #4ade80;
   margin-left: 1rem;
@@ -98,6 +97,7 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   border: 1px solid rgba(74, 222, 128, 0.2);
+  white-space: nowrap;
 }
 
 .status-dot {
