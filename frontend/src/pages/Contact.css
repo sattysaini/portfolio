@@ -42,13 +42,6 @@
   margin: 0 auto;
 }
 
-
-
-/* Contact Section */
-.contact-section {
-  margin-bottom: 6rem;
-}
-
 .contact-grid {
   display: grid;
   grid-template-rows: auto;

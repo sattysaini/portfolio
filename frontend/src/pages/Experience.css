@@ -58,7 +58,7 @@
   position: absolute;
   left: 50%;
   top: 0;
-  bottom: -130px;
+  bottom: -80px;
   width: 3px;
   background: rgba(74, 222, 128, 0.2);
   transform: translateX(-50%) scaleY(var(--timeline-progress, 0));

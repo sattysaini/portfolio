@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Main from './pages/Main';
+import Home from './pages/Home';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
+import Projects from './pages/Projects';
 import Navbar from "./components/Navbar";
-import Projects from "./pages/Projects";
 
 function App() {
   return (
@@ -13,9 +13,19 @@ function App() {
         <Navbar />
         <main className="container mx-auto px-4 py-8 fade-in">
           <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/contact" element={<Contact />} />
+            <Route path="/" element={
+              <div className="main-container">
+                <div id="home-section">
+                  <Home />
+                </div>
+                <div id="experience-section">
+                  <Experience />
+                </div>
+                <div id="contact-section">
+                  <Contact />
+                </div>
+              </div>
+            } />
             <Route path="/projects" element={<Projects />} />
           </Routes>
         </main>

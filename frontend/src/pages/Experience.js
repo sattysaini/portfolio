@@ -76,6 +76,7 @@ function Experience() {
   return (
     <section id="experience">
       <main className="common-main-content">
+        <h2 className="common-section-title">EXPERIENCE</h2>
         <div className="hero-container">
           <section className="experience-hero">
             <p className="experience-description">I'm a backend-focused Senior Software Engineer with 7+ years of experience crafting scalable systems, intuitive APIs, and cross-platform infrastructure for high-traffic products. From building real-time multiplayer engines to decoupling monolithic architectures, I've led initiatives that balance technical elegance with business impact.

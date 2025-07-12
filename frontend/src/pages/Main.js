@@ -7,8 +7,12 @@ function Main() {
   return (
     <div className="main-container">
       <Home />
-      <Experience />
-      <Contact />
+      <div id="experience-section">
+        <Experience />
+      </div>
+      <div id="contact-section">
+        <Contact />
+      </div>
     </div>
   );
 }

@@ -21,13 +21,18 @@
 .nav-logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #333;
+  color: #bbbbbb;
   margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-logo a {
-  color: #bbbbbb;
-  text-decoration: none;
+.nav-logo:hover {
+  color: #333;
+  transform: translateY(-1px);
 }
 
 .nav-menu {
@@ -38,16 +43,24 @@
   gap: 2rem;
 }
 
-.nav-menu a {
+.nav-menu a,
+.nav-menu button {
   text-decoration: none;
   color: #666;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateZ(0);
   position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu button:hover {
   color: #333;
   transform: translateY(-1px);
 }
+
