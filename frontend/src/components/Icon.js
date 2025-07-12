@@ -1,7 +1,39 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaReact, FaNodeJs, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker, FaAws, FaApple, FaAndroid } from 'react-icons/fa';
-import { SiJavascript, SiTypescript, SiMongodb, SiPostgresql, SiMysql, SiRedis, SiGraphql, SiNextdotjs, SiVuedotjs, SiAngular, SiExpress, SiDjango, SiFlask, SiSpring, SiKubernetes, SiTailwindcss, SiBootstrap, SiSass, SiCypress, SiSwift, SiCplusplus, SiRubyonrails, SiTerraform, SiUnity, SiIos, SiAndroid } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaReact, FaNodeJs, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker, FaAws, FaApple, FaAndroid, FaPhoneAlt, FaCloud } from 'react-icons/fa';
+import {
+  SiJavascript,
+  SiTypescript,
+  SiMongodb,
+  SiPostgresql,
+  SiMysql,
+  SiRedis,
+  SiGraphql,
+  SiNextdotjs,
+  SiVuedotjs,
+  SiAngular,
+  SiExpress,
+  SiDjango,
+  SiFlask,
+  SiSpring,
+  SiKubernetes,
+  SiTailwindcss,
+  SiBootstrap,
+  SiSass,
+  SiCypress,
+  SiSwift,
+  SiCplusplus,
+  SiRubyonrails,
+  SiTerraform,
+  SiUnity,
+  SiIos,
+  SiAndroid,
+  SiGmail,
+  SiAwslambda,
+  SiRuby,
+  SiLeetcode
+} from 'react-icons/si';
 import { PiFileCSharpLight } from 'react-icons/pi';
+import { TbApi } from "react-icons/tb";
 
 const iconMap = {
   // Social Media
@@ -16,11 +48,11 @@ const iconMap = {
   csharp: PiFileCSharpLight,
   swiftui: SiSwift,
   swift: SiSwift,
-  'c++': SiCplusplus,
+  'c/c++': SiCplusplus,
   cplusplus: SiCplusplus,
   python: FaPython,
   java: FaJava,
-  'ruby on rails': SiRubyonrails,
+  rubyonrails: SiRubyonrails,
   rails: SiRubyonrails,
   'objective-c': SiSwift,
   html: FaHtml5,
@@ -38,21 +70,21 @@ const iconMap = {
   // Backend & APIs
   nodejs: FaNodeJs,
   'node.js': FaNodeJs,
-  'spring boot': SiSpring,
   springboot: SiSpring,
-  'rest apis': SiGraphql,
+  restapis: TbApi,
   microservices: SiGraphql,
-  'aws lambda': FaAws,
+  awslambda: SiAwslambda,
+  ruby: SiRuby,
   // Cloud
   aws: FaAws,
-  'aws ec2': FaAws,
-  'aws s3': FaAws,
+  awsec2: FaAws,
+  awss3: FaCloud,
   terraform: SiTerraform,
   // Databases
   postgresql: SiPostgresql,
   redis: SiRedis,
   mysql: SiMysql,
-  'icloud db': FaApple,
+  iclouddb: FaApple,
   // Tools
   unity: SiUnity,
   docker: FaDocker,
@@ -61,9 +93,10 @@ const iconMap = {
   perforce: FaGitAlt,
   // Platforms
   ios: SiIos,
-  'apple arcade': FaApple,
+  applearcade: FaApple,
+  applegamekit: FaApple,
   android: FaAndroid,
-  'tizen os': SiAndroid,
+  tizenos: SiAndroid,
   // Legacy mappings
   cypress: SiCypress,
   mongodb: SiMongodb,
@@ -74,12 +107,15 @@ const iconMap = {
   flask: SiFlask,
   spring: SiSpring,
   kubernetes: SiKubernetes,
-  bootstrap: SiBootstrap
+  bootstrap: SiBootstrap,
+  phone: FaPhoneAlt,
+  email: SiGmail,
+  leetcode: SiLeetcode
 };
 
 const Icon = ({ name, size = 24, ...props }) => {
   // Remove .svg extension and normalize name
-  const normalizedName = name?.toLowerCase().replace('.svg', '');
+  const normalizedName = name?.replaceAll(' ', '').toLowerCase();
   const IconComponent = iconMap[normalizedName];
   return IconComponent ? <IconComponent size={size} {...props} /> : null;
 };

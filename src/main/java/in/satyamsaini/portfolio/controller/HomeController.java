@@ -18,15 +18,15 @@ public class HomeController {
         Map<String, Object> response = new HashMap<>();
         // Basic information
         response.put("fullName", "SATYAM SAINI");
-        response.put("greeting", "Hello, I'm Satyam.");
-        response.put("role", "I'm a Developer.");
+        response.put("greeting", "Hey, This is Satyam.");
+        response.put("role", new String[]{"a Backend Engineer.", "a Application Engineer.", "a Problem Solver.", "Batman!"});
         response.put("profileImage", "/images/profile.jpg");
         response.put("location", "Bangalore, India");
 
         // Work status object
         Map<String, Object> workStatus = new HashMap<>();
         workStatus.put("available", true);
-        workStatus.put("text", "Open for new opportunities");
+        workStatus.put("text", "Available to connect");
         response.put("workStatus", workStatus);
 
         // Social links array
@@ -35,64 +35,62 @@ public class HomeController {
         Map<String, String> linkedin = new HashMap<>();
         linkedin.put("name", "LinkedIn");
         linkedin.put("url", "https://www.linkedin.com/in/satyam--saini/");
-        linkedin.put("icon", "linkedin.svg");
         socialLinks.add(linkedin);
 
         Map<String, String> github = new HashMap<>();
         github.put("name", "GitHub");
         github.put("url", "https://github.com/sattysaini");
-        github.put("icon", "github.svg");
         socialLinks.add(github);
+
+        Map<String, String> leetcode = new HashMap<>();
+        leetcode.put("name", "Leetcode");
+        leetcode.put("url", "https://leetcode.com/u/sattysaini/");
+        socialLinks.add(leetcode);
 
         response.put("socialLinks", socialLinks);
 
         // Tech stack array
-        List<Map<String, String>> techStack = new ArrayList<>();
+        List<Map<String, Object>> techStack = new ArrayList<>();
 
         // Languages
-        addTechItem(techStack, "C#", "csharp.svg");
-        addTechItem(techStack, "Java", "java.svg");
-        addTechItem(techStack, "SwiftUI", "swiftui.svg");
-        addTechItem(techStack, "C++", "cplusplus.svg");
-        addTechItem(techStack, "Python", "python.svg");
-        addTechItem(techStack, "Ruby on Rails", "rails.svg");
-        addTechItem(techStack, "HTML", "html.svg");
-        addTechItem(techStack, "SQL", "sql.svg");
+        addTechItem(techStack, "C#", 90);
+        addTechItem(techStack, "C/C++", 85);
+        addTechItem(techStack, "SwiftUI", 70);
+        addTechItem(techStack, "Ruby", 60);
+        addTechItem(techStack, "Python", 55);
+        addTechItem(techStack, "Java", 50);
+        addTechItem(techStack, "HTML", 60);
         
         // Backend & APIs
-        addTechItem(techStack, "Node.js", "node.js.svg");
-        addTechItem(techStack, "Spring Boot", "spring boot.svg");
-        addTechItem(techStack, "REST APIs", "rest apis.svg");
-        addTechItem(techStack, "Microservices", "microservices.svg");
-        addTechItem(techStack, "AWS Lambda", "aws lambda.svg");
+        addTechItem(techStack, "Ruby on Rails", 80);
+        addTechItem(techStack, "Node.js", 35);
+        addTechItem(techStack, "Spring Boot", 70);
+        addTechItem(techStack, "AWS Lambda", 85);
+        addTechItem(techStack, "REST APIs", 90);
         
         // Cloud
-        addTechItem(techStack, "AWS", "aws.svg");
-        addTechItem(techStack, "Terraform", "terraform.svg");
+        addTechItem(techStack, "Terraform", 55);
+        addTechItem(techStack, "AWS S3", 70);
         
         // Databases
-        addTechItem(techStack, "PostgreSQL", "postgresql.svg");
-        addTechItem(techStack, "Redis", "redis.svg");
-        addTechItem(techStack, "MySQL", "mysql.svg");
-        addTechItem(techStack, "iCloud DB", "icloud db.svg");
+        addTechItem(techStack, "MySQL", 80);
+        addTechItem(techStack, "iCloud DB", 60);
+        addTechItem(techStack, "PostgreSQL", 60);
+        addTechItem(techStack, "Redis", 70);
         
         // Tools
-        addTechItem(techStack, "Unity", "unity.svg");
-        addTechItem(techStack, "Docker", "docker.svg");
-        addTechItem(techStack, "Git", "git.svg");
-        
-        // Platforms
-        addTechItem(techStack, "iOS", "ios.svg");
-        addTechItem(techStack, "Android", "android.svg");
+        addTechItem(techStack, "Unity", 80);
+        addTechItem(techStack, "Docker", 70);
+        addTechItem(techStack, "Git", 90);
 
         response.put("techStack", techStack);
         return response;
     }
     
-    private void addTechItem(List<Map<String, String>> techStack, String name, String icon) {
-        Map<String, String> item = new HashMap<>();
+    private void addTechItem(List<Map<String, Object>> techStack, String name, Integer skill) {
+        Map<String, Object> item = new HashMap<>();
         item.put("name", name);
-        item.put("icon", icon);
+        item.put("skill", skill);
         techStack.add(item);
     }
 
@@ -117,7 +115,7 @@ public class HomeController {
         blockPuzzle.put("company", "Zynga");
         blockPuzzle.put("period", "Aug 2024 - Present");
         blockPuzzle.put("description", "Led cross-functional team to ship major features, developed DDA engine");
-        blockPuzzle.put("technologies", new String[]{"C#", "Unity", "AWS", "Analytics"});
+        blockPuzzle.put("technologies", new String[]{"C Sharp", "Unity", "AWS", "Analytics"});
         blockPuzzle.put("achievements", new String[]{"30% ARPDAU increase", "25% stability improvement", "18% crash reduction"});
         timeline[1] = blockPuzzle;
         

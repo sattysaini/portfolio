@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getHomeData } from '../services/api';
 import Icon from '../components/Icon';
+import TypingAnimation from '../components/TypingAnimation';
 import './Home.css';
 
 const Home = () => {
@@ -37,7 +38,7 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <Icon name={link.icon} size={20} />
+                <Icon name={link.name} size={20} />
                 {link.name}
             </a>
         ));
@@ -48,7 +49,7 @@ const Home = () => {
 
         return homeData.techStack.map((tech, index) => (
             <div key={index} className="tech-item">
-                <Icon name={tech.icon} size={32} />
+                <Icon name={tech.name} size={32} />
                 <span>{tech.name}</span>
             </div>
         ));
@@ -98,23 +99,24 @@ const Home = () => {
                         </div>
                         <div className="profile-info">
                             <h1 className="hero-title">
-                <span className="greeting-text">
-                  {homeData.greeting || "Hey, I'm John."}
-                </span>{' '}
+                                <span className="greeting-text">
+                                    {homeData.greeting || "Hey, I'm John."}
+                                </span>
+                                <br />
                                 <span className="highlight">
-                  {homeData.role || "I'm a Frontend Developer."}
-                </span>
-                                {homeData.workStatus && (
-                                    <span className="status">
-                    <span
-                        className={`status-dot ${homeData.workStatus.available ? 'available' : 'unavailable'}`}
-                    ></span>
-                                        {homeData.workStatus.text || 'Open to work'}
-                  </span>
-                                )}
+                                    I'm <TypingAnimation texts={homeData.role || ["a Frontend Developer"]} />
+                                </span>
                             </h1>
+                            {homeData.workStatus && (
+                                <div className="status">
+                                    <span
+                                        className={`status-dot ${homeData.workStatus.available ? 'available' : 'unavailable'}`}
+                                    ></span>
+                                    {homeData.workStatus.text || 'Open to work'}
+                                </div>
+                            )}
                             <div className="location">
-                                📍 {homeData.location || 'Location not specified'}
+                                🏠 {homeData.location || 'Location not specified'}
                             </div>
                             <div className="social-links">
                                 {renderSocialLinks()}
