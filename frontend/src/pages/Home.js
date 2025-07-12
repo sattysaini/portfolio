@@ -57,15 +57,15 @@ const Home = () => {
 
     if (loading) {
         return (
-            <div className="loading">
-                <div className="spinner"></div>
+            <div className="common-loading">
+                <div className="common-spinner"></div>
             </div>
         );
     }
 
     if (error) {
         return (
-            <div className="error-message">
+            <div className="common-error-message">
                 <h2>Unable to load portfolio data</h2>
                 <p>{error}</p>
                 <button onClick={fetchHomeData}>Retry</button>
@@ -75,7 +75,7 @@ const Home = () => {
 
     if (!homeData) {
         return (
-            <div className="error-message">
+            <div className="common-error-message">
                 <h2>No data available</h2>
                 <p>Portfolio data could not be loaded.</p>
                 <button onClick={fetchHomeData}>Retry</button>
@@ -87,7 +87,7 @@ const Home = () => {
         <div className="home-container">
 
             {/* Main Content */}
-            <main className="main-content">
+            <main className="common-main-content">
                 {/* Hero Section */}
                 <section className="hero">
                     <div className="profile-section">
@@ -127,7 +127,7 @@ const Home = () => {
 
                 {/* Tech Stack Section */}
                 <section className="tech-stack">
-                    <h2 className="section-title">TECH STACK</h2>
+                    <h2 className="common-section-title">TECH STACK</h2>
                     <div className="tech-grid">
                         {renderTechStack()}
                     </div>

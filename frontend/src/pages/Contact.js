@@ -25,16 +25,16 @@ function Contact() {
   return (
     <div className="contact-container">
 
-      <main className="main-content">
+      <main className="common-main-content">
         <section className="contact-hero">
-          <h1 className="page-title">GET IN TOUCH</h1>
-          <p className="page-description">Let's discuss opportunities, collaborations, or just connect</p>
+          <h1 className="contact-page-title">GET IN TOUCH</h1>
+          <p className="contact-description">Let's discuss opportunities, collaborations, or just connect</p>
         </section>
 
         <section className="contact-section">
           <div className="contact-grid">
             <div className="contact-info">
-              <h2 className="section-title">CONTACT INFO</h2>
+              <h2 className="common-section-title">CONTACT INFO</h2>
               
               <div className="contact-item">
                 <div className="contact-icon">
@@ -82,7 +82,7 @@ function Contact() {
             </div>
 
             <div className="contact-form-section">
-              <h2 className="section-title">SEND MESSAGE</h2>
+              <h2 className="common-section-title">SEND MESSAGE</h2>
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-group">
                   <input

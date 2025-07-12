@@ -57,15 +57,15 @@ function Experience() {
 
   if (loading) {
     return (
-      <div className="loading">
-        <div className="spinner"></div>
+      <div className="common-loading">
+        <div className="common-spinner"></div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="error-message">
+      <div className="common-error-message">
         <h2>Unable to load journey data</h2>
         <p>{error}</p>
         <button onClick={fetchJourneyData}>Retry</button>
@@ -74,12 +74,14 @@ function Experience() {
   }
 
   return (
-    <div className="journey-container">
+    <div className="experience-container">
 
-      <main className="main-content">
-        <section className="journey-hero">
-          <h1 className="page-title">PROFESSIONAL JOURNEY</h1>
-          <p className="page-description">Complete timeline of my career progression and achievements</p>
+      <main className="common-main-content">
+        <section className="experience-hero">
+          <h1 className="experience-page-title">PROFESSIONAL JOURNEY</h1>
+          <p className="experience-description">I'm a backend-focused Senior Software Engineer with 7+ years of experience crafting scalable systems, intuitive APIs, and cross-platform infrastructure for high-traffic products. From building real-time multiplayer engines to decoupling monolithic architectures, I've led initiatives that balance technical elegance with business impact.
+            <br/><br/>Previously at Samsung, and now at Zynga, I've worked across the stack — driving cloud-native backend solutions, optimizing performance at scale, and mentoring teams to build resilient, data-driven platforms.
+            <br/><br/>I thrive at the intersection of product, architecture, and performance — where clean code meets real-world scale.</p>
         </section>
 
         <section className="timeline-section">

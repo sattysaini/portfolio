@@ -1,3 +1,5 @@
+@import '../components/Common.css';
+
 /* Contact Component Styles */
 .contact-container {
   min-height: 100vh;
@@ -9,22 +11,13 @@
   padding: 0;
 }
 
-/* Main Content */
-.main-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 120px 2rem 4rem;
-  box-sizing: border-box;
-}
-
 /* Contact Hero */
 .contact-hero {
   text-align: center;
   margin-bottom: 6rem;
 }
 
-.page-title {
+.contact-page-title {
   font-size: 3rem;
   font-weight: 600;
   color: #ffffff;
@@ -32,34 +25,14 @@
   letter-spacing: 2px;
 }
 
-.page-description {
+.contact-description {
   font-size: 1.2rem;
   color: #888;
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Section Title */
-.section-title {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #888;
-  margin-bottom: 3rem;
-  text-align: center;
-  position: relative;
-}
 
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, #4ade80, #3b82f6);
-}
 
 /* Contact Section */
 .contact-section {
@@ -241,7 +214,7 @@
     gap: 3rem;
   }
   
-  .page-title {
+  .contact-page-title {
     font-size: 2.5rem;
   }
   
@@ -249,9 +222,7 @@
     gap: 1rem;
   }
   
-  .main-content {
-    padding: 100px 1rem 2rem;
-  }
+
   
   .contact-item {
     padding: 1.25rem;
@@ -268,7 +239,7 @@
 }
 
 @media (max-width: 480px) {
-  .page-title {
+  .contact-page-title {
     font-size: 2rem;
     letter-spacing: 1px;
   }

@@ -1,3 +1,5 @@
+@import '../components/Common.css';
+
 /* Experience Component Styles */
 .experience-container {
   min-height: 100vh;
@@ -9,34 +11,25 @@
   padding: 0;
 }
 
-/* Main Content */
-.main-content {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 120px 2rem 4rem;
-  box-sizing: border-box;
-}
-
 /* Experience Hero */
 .experience-hero {
   text-align: center;
   margin-bottom: 6rem;
 }
 
-.page-title {
-  font-size: 3rem;
+.experience-page-title {
+  font-size: 2.5rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 1rem;
   letter-spacing: 2px;
 }
 
-.page-description {
+.experience-description {
   font-size: 1.2rem;
   color: #888;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin-left: 0;
 }
 
 /* Timeline Section */
@@ -64,79 +57,7 @@
   transition: transform 0.25s ease;
 }
 
-/* Loading State */
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0a0a0a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
 
-.spinner {
-  width: 40px;
-  height: 40px;
-  border: 4px solid #333;
-  border-top: 4px solid #4ade80;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Error State */
-.error-message {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #0a0a0a;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  z-index: 9998;
-  padding: 2rem;
-}
-
-.error-message h2 {
-  color: #ff6b6b;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-}
-
-.error-message p {
-  color: #888;
-  margin-bottom: 2rem;
-  max-width: 400px;
-}
-
-.error-message button {
-  background: linear-gradient(135deg, #4ade80, #22c55e);
-  color: #0a0a0a;
-  border: none;
-  padding: 0.75rem 2rem;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-}
-
-.error-message button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(74, 222, 128, 0.3);
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -144,17 +65,15 @@
     left: 2rem;
   }
   
-  .page-title {
+  .experience-page-title {
     font-size: 2.5rem;
   }
   
-  .main-content {
-    padding: 100px 1rem 2rem;
-  }
+
 }
 
 @media (max-width: 480px) {
-  .page-title {
+  .experience-page-title {
     font-size: 2rem;
     letter-spacing: 1px;
   }

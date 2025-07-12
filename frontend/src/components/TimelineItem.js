@@ -36,16 +36,16 @@ const TimelineItem = ({ item, index }) => {
         <div className="timeline-header">
           <h3>{item.title}</h3>
           <h4>{item.company}</h4>
-          <span className="period">{item.period}</span>
+          <span className="timeline-period">{item.period}</span>
         </div>
         {item.type !== 'role' && <p className="timeline-description">{item.description}</p>}
         
         {item.type !== 'role' && item.technologies && (
-          <div className="technologies">
+          <div className="timeline-technologies">
             <h5>Technologies:</h5>
-            <div className="tech-tags">
+            <div className="timeline-tech-tags">
               {item.technologies.map((tech, techIndex) => (
-                <div key={techIndex} className="tech-tag">
+                <div key={techIndex} className="timeline-tech-tag">
                   <Icon name={tech.toLowerCase().replace(/[^a-z0-9]/g, '')} size={16} />
                   <span>{tech}</span>
                 </div>
@@ -55,7 +55,7 @@ const TimelineItem = ({ item, index }) => {
         )}
         
         {item.type !== 'role' && item.achievements && (
-          <div className="achievements">
+          <div className="timeline-achievements">
             <h5>Key Achievements:</h5>
             <ul>
               {item.achievements.map((achievement, achIndex) => (

@@ -31,15 +31,15 @@ function Projects() {
 
   if (loading) {
     return (
-      <div className="loading">
-        <div className="spinner"></div>
+      <div className="common-loading">
+        <div className="common-spinner"></div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="error-message">
+      <div className="common-error-message">
         <h2>Unable to load projects data</h2>
         <p>{error}</p>
         <button onClick={fetchJourneyData}>Retry</button>
@@ -50,10 +50,10 @@ function Projects() {
   return (
     <div className="projects-container">
 
-      <main className="main-content">
+      <main className="common-main-content">
         <section className="projects-hero">
-          <h1 className="page-title">MY PROJECTS</h1>
-          <p className="page-description">Key projects and achievements throughout my career</p>
+          <h1 className="projects-page-title">MY PROJECTS</h1>
+          <p className="projects-description">Key projects and achievements throughout my career</p>
         </section>
 
         <section className="projects-section">
@@ -63,17 +63,17 @@ function Projects() {
                 <div className="project-header">
                   <h3>{project.title}</h3>
                   <h4>{project.company}</h4>
-                  <span className="period">{project.period}</span>
+                  <span className="projects-period">{project.period}</span>
                 </div>
                 
                 <p className="project-description">{project.description}</p>
                 
                 {project.technologies && (
-                  <div className="technologies">
+                  <div className="projects-technologies">
                     <h5>Technologies:</h5>
-                    <div className="tech-tags">
+                    <div className="projects-tech-tags">
                       {project.technologies.map((tech, techIndex) => (
-                        <div key={techIndex} className="tech-tag">
+                        <div key={techIndex} className="projects-tech-tag">
                           <Icon name={tech.toLowerCase().replace(/[^a-z0-9]/g, '')} size={16} />
                           <span>{tech}</span>
                         </div>
@@ -83,7 +83,7 @@ function Projects() {
                 )}
                 
                 {project.achievements && (
-                  <div className="achievements">
+                  <div className="projects-achievements">
                     <h5>Key Achievements:</h5>
                     <ul>
                       {project.achievements.map((achievement, achIndex) => (
