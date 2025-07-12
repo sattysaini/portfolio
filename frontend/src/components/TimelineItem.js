@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Icon from './Icon';
 import './TimelineItem.css';
 
 const TimelineItem = ({ item, index }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const itemRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => setIsVisible(true), index * 100);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0, rootMargin: '500px' }
+    );
+
+    if (itemRef.current) {
+      observer.observe(itemRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [index]);
+
   return (
-    <div className={`timeline-item ${item.type}`}>
+    <div 
+      ref={itemRef}
+      className={`timeline-item ${item.type} ${isVisible ? 'animate-in' : ''}`}
+    >
       <div className="timeline-marker">
         {item.type === 'role' && <span className="celebration-icon">🎉</span>}
       </div>
