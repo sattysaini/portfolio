@@ -1,7 +1,7 @@
 export const homeData = {
   fullName: "SATYAM SAINI",
   greeting: "Hey, This is Satyam.",
-  role: ["a Backend Engineer.", "a Application Engineer.", "a Problem Solver.", "Batman!"],
+  role: ["a Problem Solver.", "an Application Engineer.", "a Backend Engineer.", "Batman!"],
   profileImage: "/images/profile.jpg",
   location: "Bangalore, India",
   workStatus: {
@@ -40,6 +40,17 @@ export const homeData = {
 export const experienceData = {
   timeline: [
     {
+      type: "project",
+      title: "1010! Block Puzzle Game",
+      company: "Zynga",
+      period: "May 2025 - Present",
+      description: "Leading the team to make it ",
+      achievements: [
+        "Led a cross-functional team of 4 developers to conceptualize and ship a major feature, increasing ARPDAU by 30% and contributing significantly to quarterly revenue goals.",
+        "Optimized memory management by identifying and resolving critical leaks, leading to a 25% improvement in-app stability on lower-end devices and reducing crash rates by 18%."
+      ]
+    },
+    {
       type: "role",
       title: "Senior Software Engineer II",
       company: "Zynga",
@@ -51,10 +62,10 @@ export const experienceData = {
       type: "project",
       title: "1010! Block Puzzle Game",
       company: "Zynga",
-      period: "Aug 2024 - Present",
+      period: "Aug 2024 - May 2025",
       description: "Led cross-functional team to ship major features, developed DDA engine",
       achievements: [
-        "Led a cross-functional team of 4 developers to conceptualize and ship a major feature, increasing ARPDAU by 30% and contributing significantly to quarterly revenue goals.",
+        "Reduced app size by 12% by modularizing assets and compressing unused libraries, directly contributing to faster downloads and improved retention.",
         "Designed and executed an alternate replica of the core game with UX improvements, running successful A/B tests for unbiased User Acquisition (UA) strategies.",
         "Developed a dynamic difficulty adjustment (DDA) engine using behavioral cohort analysis, leading to a 5% increase in D1 and D7 retention."
       ]

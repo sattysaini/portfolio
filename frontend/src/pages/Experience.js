@@ -80,8 +80,8 @@ function Experience() {
         <div className="hero-container">
           <section className="experience-hero">
             <p className="experience-description">I'm a backend-focused Senior Software Engineer with 7+ years of experience crafting scalable systems, intuitive APIs, and cross-platform infrastructure for high-traffic products. From building real-time multiplayer engines to decoupling monolithic architectures, I've led initiatives that balance technical elegance with business impact.
-              <br/><br/>Previously at Samsung, and now at Zynga, I've worked across the stack — driving cloud-native backend solutions, optimizing performance at scale, and mentoring teams to build resilient, data-driven platforms.
-              <br/><br/>I thrive at the intersection of product, architecture, and performance — where clean code meets real-world scale.</p>
+              <br/><br/>Previously at Samsung, and now at Zynga, I've worked across the stack, driving cloud-native backend solutions, optimizing performance at scale, and mentoring teams to build resilient, data-driven platforms.
+              <br/><br/>I thrive at the intersection of product, architecture, and performance, where clean code meets real-world scale.</p>
           </section>
         </div>
 

@@ -274,6 +274,14 @@
     font-size: 1.75rem;
   }
 
+  .greeting-text {
+    font-size: 1.50rem;
+  }
+
+  .highlight {
+    font-size: 1.50rem;
+  }
+
   .social-links {
     justify-content: center;
   }
