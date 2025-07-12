@@ -38,7 +38,6 @@ const TimelineItem = ({ item, index }) => {
           <h4>{item.company}</h4>
           <span className="timeline-period">{item.period}</span>
         </div>
-        {item.type !== 'role' && <p className="timeline-description">{item.description}</p>}
         
         {item.type !== 'role' && item.technologies && (
           <div className="timeline-technologies">

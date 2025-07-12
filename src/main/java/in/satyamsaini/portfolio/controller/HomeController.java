@@ -105,7 +105,6 @@ public class HomeController {
         zyngaSse2.put("company", "Zynga");
         zyngaSse2.put("period", "May 2025 - Present");
         zyngaSse2.put("description", "");
-        zyngaSse2.put("technologies", new String[]{});
         zyngaSse2.put("achievements", new String[]{});
         timeline[0] = zyngaSse2;
 
@@ -115,8 +114,9 @@ public class HomeController {
         blockPuzzle.put("company", "Zynga");
         blockPuzzle.put("period", "Aug 2024 - Present");
         blockPuzzle.put("description", "Led cross-functional team to ship major features, developed DDA engine");
-        blockPuzzle.put("technologies", new String[]{"C Sharp", "Unity", "AWS", "Analytics"});
-        blockPuzzle.put("achievements", new String[]{"30% ARPDAU increase", "25% stability improvement", "18% crash reduction"});
+        blockPuzzle.put("achievements", new String[]{"Led a cross-functional team of 4 developers to conceptualize and ship a major feature, increasing ARPDAU by 30% and contributing significantly to quarterly revenue goals.",
+                "Designed and executed an alternate replica of the core game with UX improvements, running successful A/B tests for unbiased User Acquisition (UA) strategies.",
+                "Developed a dynamic difficulty adjustment (DDA) engine using behavioral cohort analysis, leading to a 5% increase in D1 and D7 retention."});
         timeline[1] = blockPuzzle;
         
         Map<String, Object> boggle = new HashMap<>();
@@ -125,8 +125,9 @@ public class HomeController {
         boggle.put("company", "Zynga");
         boggle.put("period", "July 2023 - Aug 2024");
         boggle.put("description", "First Apple Arcade game built entirely on Apple infrastructure");
-        boggle.put("technologies", new String[]{"SwiftUI", "Apple GameKit", "iCloud DB", "Python"});
-        boggle.put("achievements", new String[]{"90% cost reduction", "32-user SharePlay support", "Apple recognition"});
+        boggle.put("achievements", new String[]{"Built and release first Apple Arcade game ever built entirely on Apple infrastructure",
+                "Designed and implemented a real-time lobby system supporting up to 32 concurrent users over FaceTime SharePlay",
+                "Implemented game controller support from scratch for our game without relying on packages or SDKs, ensuring compatibility with iOS 13 despite significant compatibility challenges."});
         timeline[2] = boggle;
 
         Map<String, Object> zyngaSse = new HashMap<>();
@@ -135,7 +136,6 @@ public class HomeController {
         zyngaSse.put("company", "Zynga");
         zyngaSse.put("period", "Sept 2022 - May 2025");
         zyngaSse.put("description", "");
-        zyngaSse.put("technologies", new String[]{});
         zyngaSse.put("achievements", new String[]{});
         timeline[3] = zyngaSse;
         
@@ -145,8 +145,9 @@ public class HomeController {
         crosswords.put("company", "Zynga");
         crosswords.put("period", "Sept 2021 - July 2023");
         crosswords.put("description", "Refactored 10+ year legacy codebase, migrated backend");
-        crosswords.put("technologies", new String[]{"Ruby on Rails", "iOS", "REST APIs"});
-        crosswords.put("achievements", new String[]{"40% faster delivery", "100% LTV increase", "75% loading time reduction"});
+        crosswords.put("achievements", new String[]{"Refactored legacy codebase (10+ years), introducing modularization and dependency injection, reducing feature delivery time by 40%.",
+                "Migrated a shared backend service to a standalone infrastructure for Crosswords and related titles, successfully decoupling from sister teams and enabling independent deployment, scalability, and feature velocity.",
+                "Independently scoped, developed, and launched 7+ major features, collectively increasing player LTV by 100% while maintaining 99.6% crash-free sessions."});
         timeline[4] = crosswords;
 
         Map<String, Object> zyngaSe2 = new HashMap<>();
@@ -155,7 +156,6 @@ public class HomeController {
         zyngaSe2.put("company", "Zynga");
         zyngaSe2.put("period", "Sept 2021 - Sept 2022");
         zyngaSe2.put("description", "");
-        zyngaSe2.put("technologies", new String[]{});
         zyngaSe2.put("achievements", new String[]{});
         timeline[5] = zyngaSe2;
 
@@ -165,8 +165,9 @@ public class HomeController {
         samsung.put("company", "Samsung");
         samsung.put("period", "Jul 2018 - Aug 2021");
         samsung.put("description", "Developed Tizen OS platform and performance tools");
-        samsung.put("technologies", new String[]{"C++", "Python", "MySQL", "REST APIs"});
-        samsung.put("achievements", new String[]{"5% session time increase", "40% faster issue turnaround", "Automated 100+ hours of testing"});
+        samsung.put("achievements", new String[]{"integrating multiple features for future Samsung market TVs, resulting in a 5% increase in session time",
+                "Created a lightweight REST API to expose real-time TV diagnostics and performance metrics to partner teams, improving issue turnaround by 40%",
+                "Developed profiling tools to simulate real user interactions, replacing 100+ hours of manual testing"});
         timeline[6] = samsung;
         
         Map<String, Object> samsungSe = new HashMap<>();
@@ -175,7 +176,6 @@ public class HomeController {
         samsungSe.put("company", "Samsung");
         samsungSe.put("period", "Jul 2018 - Aug 2021");
         samsungSe.put("description", "");
-        samsungSe.put("technologies", new String[]{});
         samsungSe.put("achievements", new String[]{});
         timeline[7] = samsungSe;
         
@@ -185,8 +185,9 @@ public class HomeController {
         iris.put("company", "Academic Project");
         iris.put("period", "Mar 2018 - Apr 2018");
         iris.put("description", "Full-stack biometric authentication system");
-        iris.put("technologies", new String[]{"Python", "Machine Learning", "Computer Vision"});
-        iris.put("achievements", new String[]{"Improved accuracy", "Working prototype", "IIT Delhi dataset"});
+        iris.put("achievements", new String[]{
+                "Improving matching speed and accuracy over traditional algorithms (e.g.,Daugman’s, Hough Transform)",
+                "Trained on IIT Delhi dataset"});
         timeline[8] = iris;
 
         Map<String, Object> collegeStudent = new HashMap<>();
@@ -195,7 +196,6 @@ public class HomeController {
         collegeStudent.put("company", "NSIT");
         collegeStudent.put("period", "Aug 2014 - May 2018");
         collegeStudent.put("description", "");
-        collegeStudent.put("technologies", new String[]{});
         collegeStudent.put("achievements", new String[]{});
         timeline[9] = collegeStudent;
         

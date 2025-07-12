@@ -79,7 +79,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 120px 2rem 4rem;
+  padding: 50px 2rem 4rem;
   box-sizing: border-box;
 }
 
@@ -108,6 +108,6 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .common-main-content {
-    padding: 100px 1rem 2rem;
+    padding: 30px 1rem 2rem;
   }
 }

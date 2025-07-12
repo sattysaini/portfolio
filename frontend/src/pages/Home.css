@@ -13,7 +13,9 @@
 
 /* Hero Section */
 .hero {
-  margin-bottom: 6rem;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .profile-section {
