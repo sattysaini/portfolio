@@ -74,8 +74,7 @@ function Experience() {
   }
 
   return (
-    <div className="experience-container">
-
+    <section id="experience">
       <main className="common-main-content">
         <div className="hero-container">
           <section className="experience-hero">
@@ -93,7 +92,7 @@ function Experience() {
           </div>
         </section>
       </main>
-    </div>
+    </section>
   );
 }
 

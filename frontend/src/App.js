@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import Main from './pages/Main';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
 import Navbar from "./components/Navbar";
@@ -13,7 +13,7 @@ function App() {
         <Navbar />
         <main className="container mx-auto px-4 py-8 fade-in">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Main />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/projects" element={<Projects />} />
