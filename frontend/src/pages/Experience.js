@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { getExperienceData } from '../services/api';
 import TimelineItem from '../components/TimelineItem';
 import './Experience.css';
@@ -7,10 +7,39 @@ function Experience() {
   const [journeyData, setJourneyData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const timelineRef = useRef(null);
+  const maxProgressRef = useRef(0);
 
   useEffect(() => {
     fetchJourneyData();
   }, []);
+
+  useEffect(() => {
+    const updateTimelineProgress = () => {
+      if (!timelineRef.current) return;
+      
+      const timeline = timelineRef.current;
+      const rect = timeline.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      const timelineStart = rect.top + window.scrollY;
+      const timelineHeight = rect.height;
+      const currentScroll = window.scrollY + windowHeight * 1;
+      
+      let progress = (currentScroll - timelineStart) / timelineHeight;
+      progress = Math.max(0, Math.min(1, progress));
+      
+      if (progress > maxProgressRef.current) {
+        maxProgressRef.current = progress;
+        timeline.style.setProperty('--timeline-progress', progress);
+      }
+    };
+
+    window.addEventListener('scroll', updateTimelineProgress);
+    updateTimelineProgress();
+    
+    return () => window.removeEventListener('scroll', updateTimelineProgress);
+  }, [journeyData]);
 
   const fetchJourneyData = async () => {
     try {
@@ -54,7 +83,7 @@ function Experience() {
         </section>
 
         <section className="timeline-section">
-          <div className="timeline">
+          <div ref={timelineRef} className="timeline">
             {journeyData?.timeline?.map((item, index) => (
               <TimelineItem key={index} item={item} index={index} />
             ))}

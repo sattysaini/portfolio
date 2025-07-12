@@ -66,12 +66,20 @@
   animation: pulse-celebration 2s infinite;
 }
 
-.celebration-icon {
+.role-icon {
+  width: 10px;
+  height: 10px;
   position: absolute;
-  top: -8px;
-  right: -8px;
-  font-size: 12px;
-  animation: bounce 1s infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: float-up-down 1s ease-in-out infinite;
+  filter: brightness(1.2);
+}
+
+@keyframes float-up-down {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-2px); }
 }
 
 @keyframes pulse-celebration {

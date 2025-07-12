@@ -48,6 +48,7 @@
   position: relative;
   max-width: 900px;
   margin: 0 auto;
+  --timeline-progress: 0%;
 }
 
 .timeline::before {
@@ -56,9 +57,11 @@
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, #4ade80, #3b82f6);
-  transform: translateX(-50%);
+  width: 3px;
+  background: rgba(74, 222, 128, 0.2);
+  transform: translateX(-50%) scaleY(var(--timeline-progress, 0));
+  transform-origin: top;
+  transition: transform 0.25s ease;
 }
 
 /* Loading State */

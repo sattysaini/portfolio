@@ -30,7 +30,7 @@ const TimelineItem = ({ item, index }) => {
       className={`timeline-item ${item.type} ${isVisible ? 'animate-in' : ''}`}
     >
       <div className="timeline-marker">
-        {item.type === 'role' && <span className="celebration-icon">🎉</span>}
+        {item.type === 'role' && <img src="/images/top-angle-arrow-outline-icon.svg" alt="Role marker" className="role-icon" />}
       </div>
       <div className="timeline-content">
         <div className="timeline-header">
