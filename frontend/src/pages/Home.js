@@ -118,6 +118,15 @@ const Home = () => {
                             </div>
                             <div className="social-links">
                                 {renderSocialLinks()}
+                                <a
+                                    href="/pdf/SatyamSaini_Resume.pdf"
+                                    className="social-link pdf-download"
+                                    download="SatyamSaini_Resume_Jul_2025.pdf"
+                                    title="Download Resume"
+                                >
+                                    <Icon name="pdf" size={20} />
+                                    Resume
+                                </a>
                             </div>
                         </div>
                     </div>

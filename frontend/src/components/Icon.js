@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaReact, FaNodeJs, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker, FaAws, FaApple, FaAndroid, FaPhoneAlt, FaCloud } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaFacebook, FaYoutube, FaReact, FaNodeJs, FaPython, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaDocker, FaAws, FaApple, FaAndroid, FaPhoneAlt, FaCloud, FaFilePdf } from 'react-icons/fa';
 import {
   SiJavascript,
   SiTypescript,
@@ -110,7 +110,8 @@ const iconMap = {
   bootstrap: SiBootstrap,
   phone: FaPhoneAlt,
   email: SiGmail,
-  leetcode: SiLeetcode
+  leetcode: SiLeetcode,
+  pdf: FaFilePdf
 };
 
 const Icon = ({ name, size = 24, ...props }) => {
